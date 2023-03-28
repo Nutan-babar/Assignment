@@ -1,0 +1,132 @@
+<div class="modal-dialog modal-dialog-centered  modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Register</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <div class="row">
+        <div class="col-3 py-5 d-flex flex-column align-item-center">
+          <span class="imageBox">
+            <input ngModel name="file" type="file" />
+          </span>
+          <label for="">Upload your photo</label>
+        </div>
+        <div class="col-9 formFields p-5">
+          <div class="row">
+            <div class="col-6">
+              <input
+                class="form-control"
+                type="text"
+                ngModel
+                name="fname"
+                placeholder="First Name"
+              />
+            </div>
+            <div class="col-6">
+              <input
+                class="form-control"
+                type="text"
+                ngModel
+                name="lname"
+                placeholder="Last Name"
+              />
+            </div>
+
+            <div class="col-12">
+              <input
+                class="form-control"
+                type="email"
+                ngModel
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+
+            <div class="col-12">
+              <input
+                class="form-control"
+                ngModel
+                name="mobile"
+                type="mobile"
+                placeholder="Mobile"
+              />
+            </div>
+
+            <div class="col-2">
+              <label for="">Age</label>
+            </div>
+
+            <div class="col-10">
+              <input
+                class="w-100"
+                min="20"
+                max="60"
+                ngModel
+                name="age"
+                type="range"
+                placeholder="Age"
+              />
+            </div>
+
+            <div class="col-12">
+              <select class="form-control" ngModel name="state" id="">
+                <option *ngFor="let data of state" value="{{ data }}">
+                  {{ data }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <select class="form-control" ngModel name="country" id="">
+                <option *ngFor="let data of country" value="{{ data }}">
+                  {{ data }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <input
+                class="form-control"
+                ngModel
+                name="address"
+                type="text"
+                placeholder="Address"
+              />
+            </div>
+
+            <div class="col-12">
+              <input
+                class="form-control"
+                ngModel
+                name="tags"
+                type="text"
+                placeholder="Tags"
+              />
+            </div>
+
+            <div class="tags py-2">
+              <span class="tag mx-2" *ngFor="let data of tag">
+                {{ data }}
+                <span class="text-warning">&#x2715;</span>
+              </span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
